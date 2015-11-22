@@ -5,7 +5,7 @@ if [ ! -d "$target" ]; then
   target="$PWD"
 fi
 
-echo "Running command: [${target}/../customize-advanced_rules.pl -c ${target}/pulledpork.conf -d ${target}/downloaded.rules -t]"
+echo "Running command: [${target}/../build_advanced_rules.pl -c ${target}/pulledpork.conf -d ${target}/downloaded.rules -t]"
 echo "----------------------------------------------------------------"
 
 "${target}/../build_advanced_rules.pl" -c "${target}/pulledpork.conf" -d "${target}/downloaded.rules" -t
