@@ -1,0 +1,15 @@
+#!/bin/bash
+target="/opt/snort-scripts/test"
+if [ ! -d "$target" ]; then
+  echo "Dir ${target} not exists, using current dir (${PWD}) as running dir"
+  target="$PWD"
+fi
+
+echo "Running command: [${target}/../customize-advanced_rules.pl -c ${target}/pulledpork.conf -d ${target}/downloaded.rules -t]"
+echo "----------------------------------------------------------------"
+
+"${target}/../build_advanced_rules.pl" -c "${target}/pulledpork.conf" -d "${target}/downloaded.rules" -t
+
+echo "----------------------------------------------------------------"
+echo "Done"
+exit 0
