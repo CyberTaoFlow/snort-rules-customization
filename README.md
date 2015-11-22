@@ -6,14 +6,15 @@ I use the script in Security Onion (https://security-onion-solutions.github.io/s
 I wrote the script mainly because I have a lot of false positives in SNORT alarms (mainly due to the Emergin Threats signatures and the fact that I'm monitoring a "large" network while I have few services exposed) and to avoid this I needed some more "precise" rule that triggers alarm only if a service is really alive.
 I found that the pulledpork disablesid.conf, dropsid.conf etc files are not enough for my needs.
 
-## Install
-Create the taget dir and extract the tar.gz file inside 
+## Download and Install
+You can download the files directly from github using the "Download ZIP" button. To install:
 
 ```shell
-$ mkdir /opt/snort-scripts/
-$ cd /opt/snort-scripts/
-$ tar zxvf build_advanced_rules.tgz
+$ cd /opt/
+$ unzip snort-scripts-master.zip
+$ mv snort-scripts-master/ snort-scripts/
 ```
+Then Test and integrate with Security Onion.
 
 ## Script help
 The only mandatory argument is the pulledpork.conf file path (some needed configuration comes from here).
@@ -174,16 +175,6 @@ Modify the /usr/bin/rule-update script and add at the end of the file, just befo
 su - $PULLEDPORK_USER -c "/opt/snort-scripts/customize-advanced_rules.pl -c /etc/nsm/pulledpork/pulledpork.conf"
 ```
 After that you can run /usr/bin/rule-update or wait for the crontab.
-
-## Download
-You can download the files directly from github using the "Download ZIP" button. To install:
-
-```shell
-$ cd /opt/
-$ unzip snort-scripts-master.zip
-$ mv snort-scripts-master/ snort-scripts/
-```
-Then test and integrate with Security Onion.
 
 ## Contacts
 You can contact me at giovanni [dot] mellini [at] gmail [dot] com
