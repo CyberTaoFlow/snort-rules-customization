@@ -11,8 +11,8 @@ You can download the files directly from github using the "Download ZIP" button.
 
 ```shell
 $ cd /opt/
-$ unzip snort-scripts-master.zip
-$ mv snort-scripts-master/ snort-scripts/
+$ unzip snort-rules-customization-master.zip
+$ mv snort-rules-customization-master/ snort-scripts/
 ```
 Then Test and integrate with Security Onion.
 
