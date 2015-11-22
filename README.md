@@ -159,13 +159,13 @@ You can modify, add, delete rules, just remember to increment the index of the h
 ## Integrate with Secuity Onion
 To integrate the script in Security Onion 
 
-1. modify /etc/nsm/pulledpork/pulledpork.conf file and add the new generated file to the local_rules
+Modify /etc/nsm/pulledpork/pulledpork.conf file and add the new generated file to the local_rules
 
 ```text
 local_rules=/etc/nsm/rules/local.rules,/opt/snort-scripts/local.advanced.rules
 ```
 
-2. modify the /usr/bin/rule-update script and add at the end of the file, just before the row "# Restart NIDS processes", the following lines
+Modify the /usr/bin/rule-update script and add at the end of the file, just before the row "# Restart NIDS processes", the following lines
 
 ```shell
 #########################################
@@ -173,6 +173,17 @@ local_rules=/etc/nsm/rules/local.rules,/opt/snort-scripts/local.advanced.rules
 #########################################
 su - $PULLEDPORK_USER -c "/opt/snort-scripts/customize-advanced_rules.pl -c /etc/nsm/pulledpork/pulledpork.conf"
 ```
+After that you can run /usr/bin/rule-update or wait for the crontab.
+
+## Download
+You can download the files directly from github using the "Download ZIP" button. To install:
+
+```shell
+$ cd /opt/
+$ unzip snort-scripts-master.zip
+$ mv snort-scripts-master/ snort-scripts/
+```
+Then test and integrate with Security Onion.
 
 ## Contacts
 You can contact me at giovanni [dot] mellini [at] gmail [dot] com
